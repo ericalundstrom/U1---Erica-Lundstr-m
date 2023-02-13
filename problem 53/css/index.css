@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "RobotoCondesed";
+    src: url("/fonts/RobotoCondensed-Light.ttf");
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+body {
+    height: 666px;
+    /* width: 337px;  Ska jag ha detta??*/
+    font-family: "RobotoCondesed";
+}
+
+#icon img {
+    height: 30px;
+    width: 30px;
+}
+
+footer>p {
+    align-content: flex-end;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 4vw;
+
+}

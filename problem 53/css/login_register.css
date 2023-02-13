@@ -1,0 +1,45 @@
+body {
+    background-color: turquoise;
+}
+
+#header_name {
+    margin-right: 20px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+}
+
+.inputs {
+    width: 100%;
+}
+
+label {
+    font-size: 15px;
+    margin-left: 5px;
+}
+
+input {
+    width: 90vw;
+    height: 12vw;
+    margin: 5px;
+}
+
+#text_under_password {
+    text-align: center;
+}
+
+button {
+    font-size: 6vw;
+    height: 12vw;
+    width: 80vw;
+}
+
+a {
+    margin-top: 10px;
+}
