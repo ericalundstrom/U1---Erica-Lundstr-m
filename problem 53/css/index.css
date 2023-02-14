@@ -9,14 +9,17 @@ header {
 }
 
 body {
-    height: 666px;
-    /* width: 337px;  Ska jag ha detta??*/
     font-family: "RobotoCondesed";
+    font-size: 5vw;
 }
 
 #icon img {
     height: 30px;
     width: 30px;
+}
+
+footer {
+    height: 5%;
 }
 
 footer>p {
