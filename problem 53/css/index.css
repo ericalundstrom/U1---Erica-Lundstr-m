@@ -13,6 +13,10 @@ body {
     font-size: 5vw;
 }
 
+main {
+    height: 85%;
+}
+
 #icon img {
     height: 30px;
     width: 30px;

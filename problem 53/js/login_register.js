@@ -30,8 +30,8 @@ function register() {
 }
 
 
-let input_one = document.querySelector("input[type='User Name']");
-let input_two = document.querySelector("input[type='Password']");
+const input_one = document.querySelector("input[type='User Name']");
+const input_two = document.querySelector("input[type='Password']");
 
 document.querySelector("main button").addEventListener("click", check_button);
 
