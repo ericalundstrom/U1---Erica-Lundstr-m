@@ -11,18 +11,20 @@ header {
 body {
     font-family: "RobotoCondesed";
     font-size: 5vw;
+    height: 98vh;
 }
 
 main {
-    height: 85%;
+    height: 82%;
 }
 
 #icon img {
-    height: 30px;
-    width: 30px;
+    height: 8vw;
+    width: 8vw;
 }
 
 footer {
+
     height: 5%;
 }
 

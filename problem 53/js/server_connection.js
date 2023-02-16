@@ -3,28 +3,28 @@ let request = "https://teaching.maumt.se/apis/access/";
 
 async function send_response(link) {
     let rqst = await fetch(link)
+    console.log(rqst);
     return rqst;
 }
 
 
 async function send_post() {
-
     try {
         document.querySelector(".feedback").classList.add("visible");
         document.querySelector("#filter").classList.add("visible");
         document.querySelector(".feedback").innerHTML = `
-        <p> Connectning to server.. </p>
-        `;
+            <p> Connectning to server.. </p>
+            `;
 
-        let rqst = await send_response(request, {
+        let rqst = await send_response(new Request("https://teaching.maumt.se/apis/access/", {
             method: "POST",
             headers: { "Content-type": "application/json; charset=UTF-8" },
             body: JSON.stringify({
                 action: "register",
                 user_name: input_one.value,
-                password: input_two.value
+                password: input_two.value,
             }),
-        });
+        }));
 
         console.log(rqst);
         console.log(input_one.value);
@@ -32,37 +32,38 @@ async function send_post() {
 
 
         if (rqst.ok) {
+            console.log(rqst);
             document.querySelector(".feedback").classList.add("visible");
             document.querySelector("#filter").classList.add("visible");
             document.querySelector(".feedback").innerHTML = `
-        <p>Registration complete</p>
-        <p>Please proceed to login</p>
-        <button>CLOSE</button>
-        `;
+            <p>Registration complete</p>
+            <p>Please proceed to login</p>
+            <button>CLOSE</button>
+            `;
         } else {
             document.querySelector(".feedback").classList.add("visible");
             document.querySelector("#filter").classList.add("visible");
             document.querySelector(".feedback").innerHTML = `
-        <p>${rqst.statusText}</p>
-        <button>OK</button>`;
+            <p>${rqst.statusText}</p>
+            <button>OK</button>`;
             switch (rqst.status) {
                 case 418:
                     document.querySelector(".feedback").innerHTML = `
-                <p>The server thinks it's not a teapot!</p>
-                <button>OK</button>`;
+                    <p>The server thinks it's not a teapot!</p>
+                    <button>OK</button>`;
                     break;
                 case 409:
                     document.querySelector(".feedback").innerHTML = `
-                    <p>Sorry, that name is taken. Please try with another one</p>
-                    <button>OK</button>`;
+                        <p>Sorry, that name is taken. Please try with another one</p>
+                        <button>OK</button>`;
                     break;
             }
         }
     }
     catch (e) {
         document.querySelector(".feedback").innerHTML = `
-    <p>${e.message}</p>
-    <button>OK</button>`;
+        <p>${e.message}</p>
+        <button>OK</button>`;
         console.log(e);
     }
 
@@ -82,7 +83,7 @@ async function get_post() {
     <p> Connectning to server.. </p>
     `;
 
-    let response = await send_response(`${request}?action=check_credentials&user_name=${input_one.value}&password=${input_two.value}`);
+    let response = await send_response(`https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${input_one.value}&password=${input_two.value}`);
 
 
     console.log(response);

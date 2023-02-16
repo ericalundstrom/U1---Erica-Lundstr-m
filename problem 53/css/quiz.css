@@ -1,3 +1,11 @@
+main {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+}
+
 .user {
     display: flex;
     background-color: white;
@@ -5,6 +13,9 @@
     justify-content: space-between;
     padding: 8px;
     border-radius: 8px;
+    height: 5%;
+    /* position: absolute;
+    top: 50px; */
 }
 
 .user>button {
@@ -13,9 +24,8 @@
     height: auto;
 }
 
-img {
-    height: 50vh;
-    width: 90%;
+.game {
+    width: 100%;
 }
 
 .alternatives {
@@ -31,16 +41,15 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40vw;
+    width: 47vw;
     border-radius: 10px;
-
 }
 
 .image {
-    margin-top: 10px;
+    margin-top: 30px;
     margin-bottom: 10px;
-    height: 40vh;
-    width: 90%;
+    height: 50vh;
+    background-position: center;
     border: 1px solid black;
     border-radius: 10px;
     background-size: cover;
