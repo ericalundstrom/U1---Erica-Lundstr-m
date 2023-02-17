@@ -104,5 +104,8 @@ function logout() {
     console.log("hej");
     localStorage.removeItem("username");
     localStorage.removeItem("password");
+    localStorage.removeItem("user");
+
+    location.reload()
 }
 

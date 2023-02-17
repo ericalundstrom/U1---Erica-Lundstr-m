@@ -63,8 +63,8 @@ async function send_post() {
 
     document.querySelector(".feedback button").addEventListener("click", toggle_button);
 
-    localStorage.setItem("username", input_one.value);
-    localStorage.setItem("password", input_two.value);
+    // localStorage.setItem("username", input_one.value);
+    // localStorage.setItem("password", input_two.value);
 
 
 }
@@ -84,7 +84,7 @@ async function get_post() {
     let response = await get_fetch(`https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${input_one.value}&password=${input_two.value}`);
 
     if (response.ok) {
-
+        login_data(input_one.value, input_two.value);
         get_alternatives();
         toggle_button();
     } else {
