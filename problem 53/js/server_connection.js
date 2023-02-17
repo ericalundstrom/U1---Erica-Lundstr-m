@@ -1,9 +1,6 @@
 "use strict"
-let request = "https://teaching.maumt.se/apis/access/";
-
-async function send_response(link) {
+async function get_fetch(link) {
     let rqst = await fetch(link)
-    console.log(rqst);
     return rqst;
 }
 
@@ -16,7 +13,7 @@ async function send_post() {
             <p> Connectning to server.. </p>
             `;
 
-        let rqst = await send_response(new Request("https://teaching.maumt.se/apis/access/", {
+        let rqst = await get_fetch(new Request("https://teaching.maumt.se/apis/access/", {
             method: "POST",
             headers: { "Content-type": "application/json; charset=UTF-8" },
             body: JSON.stringify({
@@ -27,9 +24,6 @@ async function send_post() {
         }));
 
         console.log(rqst);
-        console.log(input_one.value);
-        console.log(input_two.value);
-
 
         if (rqst.ok) {
             console.log(rqst);
@@ -69,6 +63,10 @@ async function send_post() {
 
     document.querySelector(".feedback button").addEventListener("click", toggle_button);
 
+    localStorage.setItem("username", input_one.value);
+    localStorage.setItem("password", input_two.value);
+
+
 }
 
 function toggle_button() {
@@ -83,19 +81,9 @@ async function get_post() {
     <p> Connectning to server.. </p>
     `;
 
-    let response = await send_response(`https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${input_one.value}&password=${input_two.value}`);
+    let response = await get_fetch(`https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${input_one.value}&password=${input_two.value}`);
 
-
-    console.log(response);
     if (response.ok) {
-        document.querySelector("main").innerHTML = `
-        <div class="user">
-        <div> ${input_one.value} </div>
-        <button>LOG OUT </button>
-        </div>
-        <img src="/media/logo.png">
-        <div id="image"></div>
-    `;
 
         get_alternatives();
         toggle_button();
@@ -107,5 +95,7 @@ async function get_post() {
 
     }
 
-    // sessionStorage.setItem("currentloggedin", input_one);
+
+    let user = localStorage.getItem("username");
+    let password = localStorage.getItem("password");
 }

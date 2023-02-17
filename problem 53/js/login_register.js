@@ -37,36 +37,38 @@ document.querySelector("main button").addEventListener("click", check_button);
 
 
 async function check_button() {
-    if (input_one.value === "" && input_two.value === "") {
+    // if (input_one.value === "" && input_two.value === "") {
 
-        document.querySelector(".feedback").classList.add("visible");
-        document.querySelector("#filter").classList.add("visible");
-        document.querySelector(".feedback").innerHTML = `
-        <p>  Write your username and password </p>
-        <button> Ok </button>
-        `;
+    //     document.querySelector(".feedback").classList.add("visible");
+    //     document.querySelector("#filter").classList.add("visible");
+    //     document.querySelector(".feedback").innerHTML = `
+    //     <p>  Write your username and password </p>
+    //     <button> Ok </button>
+    //     `;
 
-        document.querySelector(".feedback button").addEventListener("click", toggle_button);
+    //     console.log("fel");
+    //     console.log();
 
+    //     document.querySelector(".feedback button").addEventListener("click", toggle_button);
+
+    // } else {
+    if (document.querySelector("button").textContent === "Register") {
+        send_post();
     } else {
-        if (document.querySelector("button").textContent === "Register") {
-            send_post();
-        } else {
-            get_post();
-        }
+        get_post();
     }
-
 }
 
+// }
 
-function login(params) {
+
+function login() {
     document.querySelector("body").style.backgroundColor = "turquoise";
     document.querySelector("main h1").textContent = "LOGIN";
     document.querySelector("a").textContent = "New to this? Register for free";
     document.querySelector("#text_under_password").textContent = "Let the magic begin!";
     document.querySelector("#text_under_password").style.backgroundColor = "turquoise";
     document.querySelector("button").textContent = "Login";
-    console.log("nu är vi i login_function");
 
 }
 
