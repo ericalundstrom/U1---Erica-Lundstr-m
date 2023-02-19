@@ -1,15 +1,21 @@
 "use strict"
 
-function login_data(username, password) {
-    let user_info = {
-        user_name: username,
-        psw: password
-    }
+load_page();
 
-    let user_data = JSON.stringify(user_info);
-    localStorage.setItem("user", user_data);
 
+
+
+function random_number(max) {
+    return Math.floor(max * Math.random());
 }
 
 
+function logout() {
+    localStorage.removeItem("user_name");
+    location.reload();
+}
 
+
+function hover_over_button(event) {
+    event.target.classList.toggle("chosen")
+}

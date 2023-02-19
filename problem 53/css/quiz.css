@@ -1,3 +1,11 @@
+body {
+    background-color: black;
+}
+
+#wrapper {
+    background-color: turquoise;
+}
+
 main {
     background-size: 100%;
     background-repeat: no-repeat;
@@ -24,9 +32,7 @@ main {
     height: auto;
 }
 
-.game {
-    width: 100%;
-}
+
 
 .alternatives {
     display: grid;
@@ -46,12 +52,16 @@ main {
     padding: 5px;
 }
 
+.chosen {
+    background-color: rgb(170, 169, 169);
+}
+
 .image {
     margin-top: 30px;
     margin-bottom: 10px;
-    width: 100%;
+    width: 95vw;
+
     background-position: center;
-    border: 1px solid black;
     border-radius: 10px;
     background-size: cover;
     max-height: 50vh;
