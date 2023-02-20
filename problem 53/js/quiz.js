@@ -69,8 +69,6 @@ function create_the_quiz(user_name) {
                 document.querySelector(".alternatives").append(button_alt);
                 button_alt.textContent = array_with_animal[i].name;
                 button_alt.addEventListener("click", log_something);
-                button_alt.addEventListener("mouseenter", hover_over_button);
-                button_alt.addEventListener("mouseleave", hover_over_button);
             }
 
             document.querySelector("main").style.backgroundImage = "";
@@ -80,16 +78,16 @@ function create_the_quiz(user_name) {
                     document.querySelector(".feedback").classList.add("visible");
                     document.querySelector("#filter").classList.add("visible");
                     document.querySelector(".feedback").innerHTML = `
-                         <p>Rätt svar!</p>
-                         <button>CLOSE</button>
+                         <p>Correct!!</p>
+                         <button>One more</button>
                      `;
                     document.querySelector(".feedback").style.backgroundColor = "green";
                 } else {
                     document.querySelector(".feedback").classList.add("visible");
                     document.querySelector("#filter").classList.add("visible");
                     document.querySelector(".feedback").innerHTML = `
-                         <p>Fel svar!</p>
-                         <button>CLOSE</button>
+                         <p>Wrong answer! Try again</p>
+                         <button>One more</button>
                      `;
                     document.querySelector(".feedback").style.backgroundColor = "red";
                 }

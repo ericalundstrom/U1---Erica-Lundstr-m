@@ -85,7 +85,7 @@ function load_structure() {
     function new_user() {
         document.querySelector("#wrapper").style.backgroundColor = "green";
         document.querySelector("#wrapper h1").textContent = "REGISTER";
-        document.querySelector("a").textContent = "Already have an account? Go to loggin";
+        document.querySelector("a").textContent = "Already have an account? Go to login";
         document.querySelector("#text_under_password").textContent = "Ready when you are...";
         document.querySelector("#text_under_password").style.backgroundColor = "green";
         document.querySelector("button").textContent = "Register";

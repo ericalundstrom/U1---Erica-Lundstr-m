@@ -1,11 +1,9 @@
 body {
     background-color: black;
-
 }
 
 #wrapper {
     background-color: turquoise;
-
 }
 
 #header_name {
@@ -22,7 +20,7 @@ main {
 
 
 label {
-
+    font-weight: bold;
     margin-left: 5px;
 }
 
@@ -34,6 +32,7 @@ input {
 
 #text_under_password {
     text-align: center;
+    font-weight: bolder;
 }
 
 button {
@@ -44,6 +43,8 @@ button {
 
 a {
     margin-top: 10px;
+    font-weight: bolder;
+    color: black;
 }
 
 .feedback {

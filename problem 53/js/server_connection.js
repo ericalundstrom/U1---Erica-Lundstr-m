@@ -41,18 +41,19 @@ async function register_user(input_one, input_two) {
             <button>OK</button>
             `;
             switch (rqst.status) {
-                case 418:
-                    document.querySelector(".feedback").innerHTML = `
-                    <p>The server thinks it's not a teapot!</p>
-                    <button>OK</button>
-                    `;
-                    break;
                 case 409:
                     document.querySelector(".feedback").innerHTML = `
                         <p>Sorry, that name is taken. Please try with another one</p>
                         <button>OK</button>
                         `;
                     break;
+                case 418:
+                    document.querySelector(".feedback").innerHTML = `
+                    <p>The server thinks it's not a teapot!</p>
+                    <button>OK</button>
+                    `;
+                    break;
+
             }
         }
     }

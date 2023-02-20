@@ -12,6 +12,3 @@ function logout() {
     location.reload();
 }
 
-function hover_over_button(event) {
-    event.target.classList.toggle("chosen")
-}

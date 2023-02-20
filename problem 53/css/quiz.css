@@ -7,19 +7,22 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
+    height: 100vh;
+    /* overflow: scroll; */
 }
 
 main {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 80%;
+
 }
 
 .game {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 
 }
 
@@ -52,6 +55,7 @@ main {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 5px;
+    height: 20vh;
 }
 
 .alt {
@@ -66,20 +70,21 @@ main {
     height: 9vh;
 }
 
-.chosen {
+.alt:hover {
     background-color: rgb(170, 169, 169);
 }
 
+
 .image {
-    margin-top: 40px;
+    margin-top: 60px;
     margin-bottom: 10px;
     width: 95vw;
 
     background-position: center;
     border-radius: 10px;
     background-size: cover;
-    max-height: 50vh;
-    /* min-height: 30vh; */
+    max-height: 60vh;
+    min-height: 50vh;
 
 }
 
