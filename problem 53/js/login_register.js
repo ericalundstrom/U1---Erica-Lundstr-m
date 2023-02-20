@@ -69,7 +69,6 @@ function load_structure() {
                 login_function();
             }
         }
-
     }
 
 
@@ -80,7 +79,6 @@ function load_structure() {
         document.querySelector("#text_under_password").textContent = "Let the magic begin!";
         document.querySelector("#text_under_password").style.backgroundColor = "turquoise";
         document.querySelector("button").textContent = "Login";
-
     }
 
 
@@ -91,6 +89,5 @@ function load_structure() {
         document.querySelector("#text_under_password").textContent = "Ready when you are...";
         document.querySelector("#text_under_password").style.backgroundColor = "green";
         document.querySelector("button").textContent = "Register";
-
     }
 }
