@@ -100,5 +100,11 @@ function create_the_quiz(user_name) {
     }
 }
 
+console.log(logout);
 
+function logout() {
+    localStorage.removeItem("user_name");
+    location.reload();
+    console.log("hej");
+}
 

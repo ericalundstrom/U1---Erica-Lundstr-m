@@ -7,23 +7,21 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100vh;
     /* overflow: scroll; */
 }
 
-main {
+/* main {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
-}
+} */
 
 .game {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-
+    height: 82vh;
 }
 
 .user {
@@ -47,8 +45,13 @@ main {
 .user>button {
     width: auto;
     font-size: 15px;
-    height: auto;
+    height: 5vh;
+    cursor: pointer;
 }
+
+/* .user>button:hover {
+    background-color: gray;
+} */
 
 .alternatives {
     display: grid;
@@ -76,15 +79,14 @@ main {
 
 
 .image {
-    margin-top: 60px;
+    margin-top: 70px;
     margin-bottom: 10px;
     width: 95vw;
-
     background-position: center;
     border-radius: 10px;
     background-size: cover;
-    max-height: 60vh;
-    min-height: 50vh;
+    min-height: 40vh;
+    max-height: 65vh;
 
 }
 
