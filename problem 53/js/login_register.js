@@ -1,19 +1,16 @@
 "use strict"
 
-function load_page() {
+function where_to() {
 
     //inloggad eller ej? Kolla status.
     if (localStorage.getItem("user_name") === null) {
-        load_structure();
+        load_structure_of_start_page();
     } else {
-        create_the_quiz(localStorage.getItem("user_name"));
+        create_quiz(localStorage.getItem("user_name"));
     }
 }
 
-const input_one = document.querySelector("input[type='User Name']");
-const input_two = document.querySelector("input[type='Password']");
-
-function load_structure() {
+function load_structure_of_start_page() {
     document.querySelector("main").innerHTML = `<h1>LOGIN</h1>
     <div class="inputs">
         <label for="User Name">User Name:</label>
@@ -32,12 +29,12 @@ function load_structure() {
     </div>
     `;
 
-    document.querySelector("a").addEventListener("click", register);
+    document.querySelector("a").addEventListener("click", register_or_login);
 
-    function register() {
+    function register_or_login() {
         document.querySelector("#link").classList.toggle("selected");
         if (document.querySelector("#link").classList.contains("selected")) {
-            new_user();
+            register();
         } else {
             login();
         }
@@ -47,9 +44,9 @@ function load_structure() {
     document.querySelector("main button").addEventListener("click", check_button);
 
 
-    async function check_button() {
-        const input_one = document.querySelector("input[type='User Name']");
-        const input_two = document.querySelector("input[type='Password']");
+    function check_button() {
+        let input_one = document.querySelector("input[type='User Name']");
+        let input_two = document.querySelector("input[type='Password']");
 
         if (input_one.value === "" && input_two.value === "") {
 
@@ -60,34 +57,34 @@ function load_structure() {
              <button> Ok </button>
              `;
 
-            document.querySelector(".feedback button").addEventListener("click", toggle_button);
+            document.querySelector(".feedback button").addEventListener("click", remove_classes);
 
         } else {
             if (document.querySelector("button").textContent === "Register") {
                 register_user(input_one, input_two);
             } else {
-                login_function();
+                login_user();
             }
         }
     }
 
 
     function login() {
+        document.querySelector("#wrapper").style.transition = "background-color 1s";
         document.querySelector("#wrapper").style.backgroundColor = "turquoise";
         document.querySelector("#wrapper h1").textContent = "LOGIN";
         document.querySelector("a").textContent = "New to this? Register for free";
         document.querySelector("#text_under_password").textContent = "Let the magic begin!";
-        document.querySelector("#text_under_password").style.backgroundColor = "turquoise";
         document.querySelector("button").textContent = "Login";
     }
 
 
-    function new_user() {
+    function register() {
+        document.querySelector("#wrapper").style.transition = "background-color 1s";
         document.querySelector("#wrapper").style.backgroundColor = "green";
         document.querySelector("#wrapper h1").textContent = "REGISTER";
         document.querySelector("a").textContent = "Already have an account? Go to login";
         document.querySelector("#text_under_password").textContent = "Ready when you are...";
-        document.querySelector("#text_under_password").style.backgroundColor = "green";
         document.querySelector("button").textContent = "Register";
     }
 }

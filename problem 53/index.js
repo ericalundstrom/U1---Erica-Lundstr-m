@@ -1,6 +1,6 @@
 "use strict"
 
-load_page();
+where_to();
 
 
 function random_number(max) {

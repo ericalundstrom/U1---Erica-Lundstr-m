@@ -25,7 +25,7 @@ async function register_user(input_one, input_two) {
         }));
 
         if (rqst.ok) {
-            console.log(rqst);
+
             document.querySelector(".feedback").classList.add("visible");
             document.querySelector("#filter").classList.add("visible");
             document.querySelector(".feedback").innerHTML = `
@@ -62,19 +62,18 @@ async function register_user(input_one, input_two) {
         <p>${e.message}</p>
         <button>OK</button>
         `;
-        console.log(e);
     }
 
-    document.querySelector(".feedback button").addEventListener("click", toggle_button);
+    document.querySelector(".feedback button").addEventListener("click", remove_classes);
 
 }
 
-function toggle_button() {
+function remove_classes() {
     document.querySelector(".feedback").classList.remove("visible");
     document.querySelector("#filter").classList.remove("visible");
 }
 
-async function login_function() {
+async function login_user() {
 
     try {
 
@@ -83,14 +82,14 @@ async function login_function() {
         document.querySelector(".feedback").innerHTML = `
              <p> Connectning to server.. </p>
              `;
-        const input_one = document.querySelector("input[type='User Name']");
-        const input_two = document.querySelector("input[type='Password']");
+        let input_one = document.querySelector("input[type='User Name']");
+        let input_two = document.querySelector("input[type='Password']");
 
         let response = await get_fetch(`https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${input_one.value}&password=${input_two.value}`);
 
         if (response.ok) {
             localStorage.setItem("user_name", input_one.value);
-            create_the_quiz(input_one.value);
+            create_quiz(input_one.value);
             toggle_button(input_one);
         } else {
             document.querySelector(".feedback").classList.add("visible");
@@ -116,10 +115,9 @@ async function login_function() {
                     break;
 
             }
-            document.querySelector(".feedback button").addEventListener("click", toggle_button);
+            document.querySelector(".feedback button").addEventListener("click", remove_classes);
         }
     } catch (error) {
-        console.log(error);
         if (error.message.includes("NetworkError")) {
             document.querySelector(".feedback").classList.add("visible");
             document.querySelector("#filter").classList.add("visible");

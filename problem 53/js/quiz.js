@@ -1,7 +1,7 @@
 "use strict"
 
 
-function create_the_quiz(user_name) {
+function create_quiz(user_name) {
 
     create_quiz_layout()
 
@@ -17,9 +17,9 @@ function create_the_quiz(user_name) {
          <div class="game"></div>
          `;
 
-        start_the_quiz();
+        start_quiz();
 
-        async function start_the_quiz() {
+        async function start_quiz() {
 
             let array_with_animal = []
 
@@ -27,8 +27,6 @@ function create_the_quiz(user_name) {
                 const new_dog = ALL_BREEDS[random_number(ALL_BREEDS.length)];
                 if (!array_with_animal.includes(new_dog)) {
                     array_with_animal.push(new_dog)
-                } else {
-                    console.log("finns");
                 }
             }
 
@@ -92,7 +90,7 @@ function create_the_quiz(user_name) {
                     document.querySelector(".feedback").style.backgroundColor = "red";
                 }
 
-                document.querySelector(".feedback button").addEventListener("click", toggle_button);
+                document.querySelector(".feedback button").addEventListener("click", remove_classes);
                 document.querySelector(".feedback button").addEventListener("click", create_quiz_layout);
             }
             document.querySelector(".user button").addEventListener("click", logout);
@@ -100,11 +98,8 @@ function create_the_quiz(user_name) {
     }
 }
 
-console.log(logout);
 
 function logout() {
     localStorage.removeItem("user_name");
     location.reload();
-    console.log("hej");
 }
-

@@ -3,17 +3,25 @@
     src: url("/fonts/RobotoCondensed-Light.ttf");
 }
 
+* {
+    font-family: "RobotoCondesed";
+}
+
 header {
     display: flex;
     justify-content: space-between;
     height: 6%;
     padding: 10px;
+    box-sizing: border-box;
 }
 
 body {
     font-family: "RobotoCondesed";
     font-size: 5vw;
     margin: 0;
+    height: 100%;
+    overflow: scroll;
+
 }
 
 .inputs {
@@ -21,15 +29,12 @@ body {
 }
 
 #wrapper {
-    height: 100vh;
+    height: auto;
     border-radius: 20px;
     overflow: scroll;
     position: relative;
+    height: 100vh;
 }
-
-/* main {
-    height: 82%;
-} */
 
 #icon img {
     height: 8vw;
@@ -37,10 +42,8 @@ body {
 }
 
 footer {
-    height: 5%;
-    position: absolute;
-    box-sizing: border-box;
     bottom: 30px;
+    box-sizing: border-box;
 }
 
 footer>p {
@@ -48,5 +51,53 @@ footer>p {
     text-align: center;
     margin-top: 20px;
     font-size: 4vw;
+}
 
+.feedback {
+    width: 80vw;
+    background-color: white;
+    position: absolute;
+    top: 70vw;
+    left: 10vw;
+    border-radius: 10px;
+    border: 1px solid black;
+    visibility: hidden;
+}
+
+.feedback.visible {
+    visibility: visible;
+    opacity: 90%;
+    z-index: 1;
+}
+
+#filter {
+    visibility: hidden;
+}
+
+#filter.visible {
+    visibility: visible;
+    background-color: rgba(248, 248, 255, 0.6);
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.feedback>p {
+    font-size: 20px;
+    text-align: center;
+}
+
+.feedback>button {
+    width: 90%;
+    justify-items: center;
+    margin: 12px;
+}
+
+#text_under_password {
+    padding: 2px;
+    margin: 4px;
 }

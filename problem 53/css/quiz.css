@@ -2,26 +2,27 @@ body {
     background-color: black;
 }
 
+main {
+    flex-grow: 1;
+}
+
 #wrapper {
+    box-sizing: content-box;
     background-color: turquoise;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    /* overflow: scroll; */
-}
-
-/* main {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-} */
+}
 
 .game {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    height: 82vh;
+    justify-content: center;
+    flex-grow: 1;
 }
 
 .user {
@@ -32,26 +33,21 @@ body {
     padding: 8px;
     border-radius: 8px;
     height: 5%;
-    position: absolute;
-    top: 50px;
 }
 
 .user>div {
     display: flex;
     height: 100%;
     align-items: center;
+    margin: 0px;
 }
 
 .user>button {
     width: auto;
     font-size: 15px;
-    height: 5vh;
+    height: auto;
     cursor: pointer;
 }
-
-/* .user>button:hover {
-    background-color: gray;
-} */
 
 .alternatives {
     display: grid;
@@ -85,9 +81,6 @@ body {
     background-position: center;
     border-radius: 10px;
     background-size: cover;
-    min-height: 40vh;
-    max-height: 65vh;
-
 }
 
 .alert {
