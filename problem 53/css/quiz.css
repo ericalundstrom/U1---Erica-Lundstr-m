@@ -59,7 +59,6 @@ main {
 
 .alt {
     background-color: white;
-    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,9 +72,8 @@ main {
     background-color: rgb(170, 169, 169);
 }
 
-
 .image {
-    margin-top: 70px;
+    margin-top: 60px;
     margin-bottom: 10px;
     width: 95vw;
     background-position: center;
